@@ -24,7 +24,7 @@ function loadDeckList() {
         card.innerHTML = `
       <div class="deck-title">${deck.title}</div>
       <div class="deck-info">${deck.cards.length} Cards</div>
-      <p class="deck-description" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">${deck.description}</p>
+      <p class="deck-description">${deck.description}</p>
       <div class="start-btn">Start Studying</div>
     `;
 

@@ -74,14 +74,25 @@ function loadQuestion() {
 
     // Generate Options
     const correctAns = currentQ.answer;
-    const options = [correctAns];
+    let options = [];
 
-    // Pick 3 random distractors that are NOT the correct answer
-    const distractors = allAnswers.filter(a => a !== correctAns);
-    shuffleArray(distractors);
+    if (currentQ.options && Array.isArray(currentQ.options)) {
+        options = [...currentQ.options];
+        // Ensure the correct answer is included if it wasn't for some reason, 
+        // though our data should be correct.
+        if (!options.includes(correctAns)) {
+            options.push(correctAns);
+        }
+    } else {
+        options = [correctAns];
 
-    // Take top 3, or less if not enough unique distractors
-    options.push(...distractors.slice(0, 3));
+        // Pick 3 random distractors that are NOT the correct answer
+        const distractors = allAnswers.filter(a => a !== correctAns);
+        shuffleArray(distractors);
+
+        // Take top 3, or less if not enough unique distractors
+        options.push(...distractors.slice(0, 3));
+    }
 
     // Shuffle options so correct isn't always first
     shuffleArray(options);

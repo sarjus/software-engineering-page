@@ -82,5 +82,61 @@ const decks = {
         answer: "The Deterioration Paradox. While software doesn't \"wear out,\" it deteriorates due to change. Maintenance is a survival strategy to keep the software viable as environments evolve."
       }
     ]
+  },
+  "process_models": {
+    title: "Software Process Models",
+    description: "Challenge your ability to select the right SDLC model based on specific project constraints, risks, and requirements.",
+    cards: [
+      {
+        question: "A government agency requires a new tax filing system. Requirements are fixed, stable, and legal regulations are rigorously documented upfront. Which model is best?",
+        answer: "Waterfall Model",
+        options: ["Waterfall Model", "Agile", "Prototype Model", "Spiral Model"]
+      },
+      {
+        question: "A startup wants to show a 'mock version' of a social media app to investors quickly to visualize the UI, even though the backend isn't ready. Which model fits best?",
+        answer: "Prototype Model",
+        options: ["Waterfall Model", "Prototype Model", "Incremental Model", "Spiral Model"]
+      },
+      {
+        question: "You are developing a flight control system where safety is critical. You need a model that emphasizes risk analysis at every stage.",
+        answer: "Spiral Model",
+        options: ["Incremental Model", "Agile", "Spiral Model", "Waterfall Model"]
+      },
+      {
+        question: "A client needs the core functionality of an e-commerce site immediately to start selling, with advanced features (like AI recommendations) delivered in later releases.",
+        answer: "Incremental Model",
+        options: ["Incremental Model", "Waterfall Model", "Prototype Model", "Spiral Model"]
+      },
+      {
+        question: "Requirements are unclear and the customer wants to change features frequently based on market feedback. The team is small and co-located.",
+        answer: "Agile Model",
+        options: ["Waterfall Model", "Agile Model", "V-Model", "Spiral Model"]
+      },
+      {
+        question: "The requirements are well understood, but the technology is new to the team. You decide to build a small working aspect of the system to test the technical feasibility first.",
+        answer: "Prototype Model",
+        options: ["Prototype Model", "Waterfall Model", "Incremental Model", "Agile Model"]
+      },
+      {
+        question: "Development of a large-scale enterprise system where the customer wants to see progress and give feedback after every module is built and integrated.",
+        answer: "Incremental Model",
+        options: ["Incremental Model", "Waterfall Model", "V-Model", "Spiral Model"]
+      },
+      {
+        question: "A project has a very strict deadline and fixed budget, and the client knows exactly what they want down to the last detail from the start.",
+        answer: "Waterfall Model",
+        options: ["Agile Model", "Waterfall Model", "Spiral Model", "Incremental Model"]
+      },
+      {
+        question: "The project involves building a complex system with high financial risks. The client wants to proceed cautiously, evaluating the project's feasibility repeatedly.",
+        answer: "Spiral Model",
+        options: ["Waterfall Model", "Agile Model", "Spiral Model", "RAD Model"]
+      },
+      {
+        question: "You are building a mobile game where 'fun' is the main requirement, but it's hard to define 'fun' without playing it. You need to iterate rapidly based on user testing.",
+        answer: "Agile Model",
+        options: ["Waterfall Model", "Agile Model", "V-Model", "Spiral Model"]
+      }
+    ]
   }
 };

@@ -4,71 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Mode - Test Your Skills</title>
+    <title>Quiz Mode | Software Engineering</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
     <header>
-        <a href="index.html"
-            style="color: var(--text-color); position: absolute; left: 2rem; top: 2rem; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; font-weight: 600;">
-            <i class="fas fa-arrow-left"></i> Home
-        </a>
-        <h1 style="font-size: 1.8rem;">Quiz Mode</h1>
+        <nav>
+            <a href="index.html">
+                <i class="fas fa-chevron-left"></i> Back to Home
+            </a>
+        </nav>
+        <h1>Quiz Mode</h1>
+        <p class="subtitle">Challenge your understanding</p>
     </header>
 
     <main class="study-container">
 
         <!-- Topic Selection View -->
-        <div class="flashcard" id="topic-selection" style="height: auto; min-height: 300px;">
-            <div class="card-face card-front" style="transform: none; position: relative; padding: 3rem;">
-                <h2 style="font-size: 2rem; margin-bottom: 2rem;">Select a Topic</h2>
-                <div class="options-grid" id="topic-list" style="gap: 1.5rem;">
-                    <!-- Topic buttons injected here -->
+        <div class="flashcard" id="topic-selection">
+            <div class="card-face">
+                <h2 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Select a Topic</h2>
+                <div class="options-grid" id="topic-list"
+                    style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <!-- Topic buttons injected here via JS -->
                 </div>
             </div>
         </div>
 
-        <div class="flashcard quiz-card" id="quiz-container" style="display: none;">
-
-            <div class="card-face card-front"
-                style="cursor: default; transform: none; display: flex; align-items: stretch; text-align: left; padding: 2rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                    <div class="label" style="margin:0;">Question <span id="current-q-num">1</span> / <span
-                            id="total-q-num">10</span></div>
-                    <div class="label" style="margin:0; color: var(--text-color);">Score: <span id="score">0</span>
+        <!-- Quiz Interface -->
+        <div class="quiz-card" id="quiz-container" style="display: none;">
+            <div class="card-face">
+                <div class="quiz-header">
+                    <div class="quiz-stat">Question <span id="current-q-num">1</span> / <span id="total-q-num">10</span>
                     </div>
+                    <div class="quiz-stat">Score: <span id="score">0</span></div>
                 </div>
 
-                <div class="content" id="question-text" style="font-size: 1.3rem; margin-bottom: 2rem; flex: 0 0 auto;">
+                <div class="question-text" id="question-text">
                     Loading Question...
                 </div>
 
                 <div class="options-grid" id="options-container">
-                    <!-- Options will be injected here -->
+                    <!-- Options will be injected here via JS -->
                 </div>
 
-                <div id="result-message"
-                    style="margin-top: auto; text-align: center; font-weight: 600; min-height: 1.5em;"></div>
+                <div id="result-message"></div>
             </div>
-
         </div>
 
-        <!-- Quiz Result Overlay / Summary (Hidden by default) -->
-        <div id="quiz-summary" class="flashcard" style="display: none; cursor: default;">
-            <div class="card-face card-front" style="transform: none;">
-                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Quiz Complete!</h2>
-                <div style="font-size: 4rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">
-                    <span id="final-score">0</span>%
+        <!-- Quiz Result Overlay / Summary -->
+        <div id="quiz-summary" class="flashcard" style="display: none;">
+            <div class="card-face"
+                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Quiz Complete!</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Here is how you performed</p>
+
+                <div class="score-display-large">
+                    <span id="final-score">0</span><span style="font-size: 3rem; vertical-align: top;">%</span>
                 </div>
-                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.2rem;" id="final-stats">
-                    You got 8 out of 10 questions correct.
+
+                <p id="final-stats" style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 3rem;">
+                    <!-- Stats text -->
                 </p>
+
                 <div style="display: flex; gap: 1rem;">
-                    <button onclick="location.reload()" class="start-btn" style="cursor: pointer;">Try Again</button>
+                    <button onclick="location.reload()" class="start-btn">
+                        <i class="fas fa-redo-alt" style="margin-right:8px;"></i> Try Again
+                    </button>
                     <a href="index.html" class="start-btn"
-                        style="background: rgba(255,255,255,0.1); border: var(--glass-border);">Back to Home</a>
+                        style="background: transparent; border: 1px solid rgba(255,255,255,0.1);">
+                        Back to Home
+                    </a>
                 </div>
             </div>
         </div>
